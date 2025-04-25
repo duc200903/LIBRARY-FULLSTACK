@@ -11,7 +11,7 @@ const BookList = () => {
   return (
     <div className="text-[#252422] bg-[#F5F5F5] px-4 md:px-12 pb-20">
       <h1 className="py-6 text-xl md:text-2xl lg:text-3xl w-full mx-auto max-w-6xl">
-        Reader&rsquo;s favorites
+      Sách được bạn đọc yêu thích
       </h1>
 
       <div className="flex flex-wrap justify-center gap-5 lg:gap-8 max-w-6xl mx-auto">

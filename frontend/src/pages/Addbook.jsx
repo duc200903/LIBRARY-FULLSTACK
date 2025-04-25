@@ -26,7 +26,7 @@ const Addbook = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if(!image || !title || !author || !link){
+    if (!image || !title || !author || !link) {
       toast.error("Please fill in required info.");
     }
 
@@ -46,14 +46,14 @@ const Addbook = () => {
   return (
     <div className="min-h-screen text-[#252422] bg-[#f5f5f5] px-4 md:px-12 pb-16">
       <h2 className="text-center font-semibold pt-8 md:text-2xl w-full max-w-xl mx-auto">
-        Add Book to Library
+        Thêm sách vào thư viện
       </h2>
       <form
         onSubmit={handleSubmit}
         className="flex flex-col justify-center items-center w-full max-w-xl mx-auto space-y-4 mt-10"
       >
         <div className="flex flex-col w-full">
-          <label className="md:text:lg">Book Image*: </label>
+          <label className="md:text:lg">Ảnh bìa*: </label>
           <input
             type="file"
             accept="image/*"
@@ -63,7 +63,7 @@ const Addbook = () => {
         </div>
 
         <div className="flex flex-col w-full">
-          <label className="md:text:lg">Title*: </label>
+          <label className="md:text:lg">Tiêu đề*: </label>
           <input
             type="text"
             value={title}
@@ -73,7 +73,7 @@ const Addbook = () => {
         </div>
 
         <div className="flex flex-col w-full">
-          <label className="md:text:lg">Subtitle (optional): </label>
+          <label className="md:text:lg">Phụ đề (không bắt buộc): </label>
           <input
             type="text"
             value={subtitle}
@@ -83,7 +83,7 @@ const Addbook = () => {
         </div>
 
         <div className="flex flex-col w-full">
-          <label className="md:text:lg">Author*: </label>
+          <label className="md:text:lg">Tác giả*: </label>
           <input
             type="text"
             value={author}
@@ -93,7 +93,7 @@ const Addbook = () => {
         </div>
 
         <div className="flex flex-col w-full">
-          <label className="md:text:lg">Link*: </label>
+          <label className="md:text:lg">Liên kết*: </label>
           <input
             type="text"
             value={link}
@@ -103,7 +103,7 @@ const Addbook = () => {
         </div>
 
         <div className="flex flex-col w-full">
-          <label className="md:text:lg">Personal Review (optional): </label>
+          <label className="md:text:lg">Đánh giá cá nhân (tùy chọn): </label>
           <textarea
             value={review}
             onChange={(e) => setReview(e.target.value)}
@@ -119,7 +119,7 @@ const Addbook = () => {
           disabled={isLoading}
           className="w-full bg-[#403D39] text-[#FFFCF2] py-2 font-medium rounded-lg"
         >
-          {isLoading ? "Please wait..." : "Add book"}
+          {isLoading ? "Please wait..." : "Thêm sách"}
         </button>
       </form>
     </div>

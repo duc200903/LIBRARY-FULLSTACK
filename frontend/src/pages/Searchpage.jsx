@@ -39,7 +39,7 @@ const Searchpage = () => {
   return (
     <div className="min-h-screen text-[#252422] bg-[#F5F5F5] px-4 md:px-12 pb-10">
       <p className="cursor-pointer py-3" onClick={() => navigate("/")}>
-        &larr; Back
+        &larr; Quay lại
       </p>
 
       <div className="w-full h-full flex flex-col justify-center items-center">
@@ -51,7 +51,7 @@ const Searchpage = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             type="text"
-            placeholder="e.g. Purple hibiscus"
+            placeholder="ví dụ: Dế mèn phiêu lưu ký"
             className="w-full px-3 py-1.5 md:py-2 text-[#252422] rounded-lg bg-[#FFFCF2] border border-gray-500"
           />
 
@@ -59,13 +59,13 @@ const Searchpage = () => {
             type="submit"
             className="absolute right-0 top-0 bottom-0 bg-[#403D39] px-4 border border-white rounded-r-lg text-[#F5F5F5]"
           >
-            Search
+            Tìm kiếm
           </button>
         </form>
       </div>
 
       <h1 className="font-semibold pt-8 pb-6 text-xl md:text-2xl">
-        Search results
+        Kết quả tìm kiếm
       </h1>
 
       {books.length > 0 ? (
@@ -92,7 +92,7 @@ const Searchpage = () => {
           ))}
         </div>
       ) : (
-        <p>No book found</p>
+        <p>Không tìm thấy sách</p>
       )}
     </div>
   );
