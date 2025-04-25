@@ -8,7 +8,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import { v2 as cloudinary } from "cloudinary";
 import Book from "./models/book.model.js";
-import path from "path"
+import path from "path";
 
 dotenv.config();
 
@@ -22,7 +22,7 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-console.log("PORT is", process.env.PORT);
+console.log("PORT is", PORT);
 
 const __dirname = path.resolve();
 
@@ -65,15 +65,19 @@ app.post("/api/signup", async (req, res) => {
 
     //JWT
     if (userDoc) {
+      const day = "7d";
       const token = jwt.sign({ id: userDoc._id }, process.env.JWT_SECRET, {
-        expiresIn: "7d",
+        expiresIn: day,
       });
+
 
       res.cookie("token", token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         sameSite: "strict",
-        maxAge: 7 * 24 * 60 * 60 * 1000,
+        // maxAge: 7 * 24 * 60 * 60 * 1000,
+        //604800000  = 7day
+        maxAge: 604800000 
       });
     }
 
